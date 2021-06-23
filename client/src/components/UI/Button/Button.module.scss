@@ -1,0 +1,16 @@
+@import "../../../variables.scss";
+
+.Button {
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: $dark;
+  border: 1px solid $light;
+  transition: 0.2s ease;
+  text-decoration: none;
+  color: $light;
+  &:hover {
+    background: $bg;
+  }
+}
