@@ -32,3 +32,25 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .home {
+    h1 {
+      font-size: 5rem;
+    }
+    .btnGroup {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .home {
+    h1 {
+      font-size: 5rem;
+    }
+    .btnGroup {
+      width: 80%;
+    }
+  }
+}

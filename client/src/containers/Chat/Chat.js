@@ -17,7 +17,9 @@ const Chat = ({location, history})=>{
     const [inputMessage, setInputMessage] = useState("");
     const [users, setUsers] = useState([]);
     const inviteCode = useRef(null);
+    const inviteCodeMobile = useRef(null);
     const inviteText = useRef(null);
+    const inviteTextMobile = useRef(null);
     const username=useSelector(state=>state.user.username);
     const chatroomName=useSelector(state=>state.user.chatroomName);
     const chatroomId=useSelector(state=>state.user.chatroomId);
@@ -90,6 +92,15 @@ const Chat = ({location, history})=>{
             inviteText.current.innerHTML=`<span>Invite Code:</span> ${chatroomId}`
         }, 500)
     }
+
+    const copyInviteCodeMobile = ()=>{
+        inviteCodeMobile.current.select();
+        document.execCommand("copy");
+        inviteTextMobile.current.innerHTML="Copied!"
+        setTimeout(()=>{
+            inviteTextMobile.current.innerHTML=`<span>Invite Code:</span> ${chatroomId}`
+        }, 500)
+    }
     
     return (
         <div className={styles.Chat}>
@@ -109,6 +120,14 @@ const Chat = ({location, history})=>{
                             </div>
                         ))}
                     </ScrollToBottom>
+                    <div className={styles.inputInvite}>
+                        <p ref={inviteTextMobile}><span>Invite Code:</span> {chatroomId}</p>
+                        <textarea
+                        ref={inviteCodeMobile}
+                        value={chatroomId}
+                        />
+                        <FontAwesomeIcon icon={faCopy} className={styles.icon} onClick={copyInviteCodeMobile}/>
+                    </div>
                     <div className={styles.input}>
                         <input type="text" value={inputMessage} onChange={(e)=>setInputMessage(e.target.value)} onKeyPress={sendMessageHandler} placeholder="Enter message"/>
                         <button onClick={sendMessageHandler}>SEND</button>

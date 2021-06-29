@@ -82,3 +82,29 @@
     margin: 0 0 0 0.4rem;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .join {
+    h1 {
+      font-size: 5rem;
+    }
+
+    .formGroup {
+      width: 70%;
+    }
+  }
+
+  .nav {
+    .icon {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .join {
+    .formGroup {
+      width: 80%;
+    }
+  }
+}
