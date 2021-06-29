@@ -17,7 +17,10 @@ app.use(require('cors')())
 app.use(indexRoute);
 
 io.on("connection", socket=>{
-    let socketData=null;
+    let socketData={
+        username: "",
+        chatroomId: ""
+    };
 
     //When room is first created by admin
     socket.on("adminJoin", (data, callback)=>{
@@ -28,7 +31,7 @@ io.on("connection", socket=>{
         }
         socket.emit("serverNotification", {
             user: "admin",
-            message: `Welcome to your chatroom ${data.username}`
+            message: `Welcome to your chatroom, ${data.username}!`
         })
 
         socket.join(socket.id);
@@ -54,7 +57,7 @@ io.on("connection", socket=>{
         //To send notification to the client
         socket.emit("serverNotification", {
             user: "admin",
-            message: `Welcome to the chatroom ${data.username}`
+            message: `Welcome to the chatroom, ${data.username}!`
         })
 
         socket.broadcast.to(data.chatroomId).emit("serverNotification", {
@@ -75,7 +78,7 @@ io.on("connection", socket=>{
     
     //When someone disconnects from the room
     socket.on("disconnect", ()=>{
-        if(socketData.username && socketData.chatroomId){
+        if(socketData.username!="" && socketData.chatroomId!=""){
             removeUser(socketData.username, socketData.chatroomId);
             io.to(socketData.chatroomId).emit("usersData", getUsers(socketData.chatroomId));
             socket.broadcast.to(socketData.chatroomId).emit("serverNotification", {

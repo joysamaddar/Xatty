@@ -55,5 +55,7 @@ exports.removeUser = (username, chatroomId)=>{
 
 exports.getUsers= (chatroomId)=>{
     const roomIndex = rooms.findIndex(room=>(room.chatroomId==chatroomId));
-    return rooms[roomIndex].users;
+    if(roomIndex!=-1){
+        return rooms[roomIndex].users;
+    }
 }

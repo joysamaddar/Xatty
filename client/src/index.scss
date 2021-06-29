@@ -9,10 +9,25 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $light;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $light;
 }

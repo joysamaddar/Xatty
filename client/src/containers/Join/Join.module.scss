@@ -50,3 +50,35 @@
     }
   }
 }
+
+.nav {
+  color: $white;
+  width: 100%;
+  margin: 0 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+    color: $white;
+    display: block;
+    width: auto !important;
+    margin-right: 0.4rem;
+  }
+
+  .icon {
+    margin-left: 0.4rem;
+    font-size: 1.2rem;
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+
+  .navText {
+    font-weight: 500;
+    margin: 0 0 0 0.4rem;
+  }
+}
