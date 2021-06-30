@@ -12,6 +12,6 @@ Chat app using Node.js, React and socket.io
 ### Desktop UI
 ![Screenshot1](https://i.imgur.com/El2kolU_d.webp?maxwidth=760&fidelity=grand "Screenshot1")
 ![Screenshot2](https://i.imgur.com/nAgOGCu.png "Screenshot2")
-![Screenshot3](https://i.imgur.com/ca54ehG.png "Screenshot3")
+![Screenshot3](https://i.imgur.com/dQSBlTU.png "Screenshot3")
 ### Mobile UI
-![Screenshot4](https://i.imgur.com/qNJXSV7.png "Screenshot4")
+![Screenshot4](https://i.imgur.com/LCeylDR.png "Screenshot4")
