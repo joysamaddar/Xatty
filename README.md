@@ -1,5 +1,5 @@
 # Xatty
-Chat app using MERN stack and socket.io
+Chat app using Node.js, React and socket.io
 #### Check it out on - https://xatty.netlify.app
 
 ## Features
