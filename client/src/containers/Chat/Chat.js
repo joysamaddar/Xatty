@@ -24,7 +24,7 @@ const Chat = ({location, history})=>{
     const chatroomName=useSelector(state=>state.user.chatroomName);
     const chatroomId=useSelector(state=>state.user.chatroomId);
     const roomType=queryString.parse(location.search).mode;
-    const ENDPOINT="http://localhost:5000/";
+    const ENDPOINT= process.env.REACT_APP_BACKEND_URL || "http://localhost:5000/";
     const dispatch = useDispatch();
     
     useEffect(()=>{
